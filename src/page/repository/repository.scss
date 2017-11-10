@@ -1,0 +1,30 @@
+/*
+repository.scss
+============
+Repository Component css
+*/
+
+@import
+  "../../assets/scss/mixin.scss",
+  "../../assets/scss/color.scss",
+	"../../assets/scss/font.scss"
+;
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-grow: 1;
+  padding: 20px;
+  height: 100vh;
+  overflow: hidden;
+  &-language {
+    display: flex;
+    margin-bottom: 8px;
+    color: $black;
+    @include font-family;
+    @include font-size(16);
+    font-weight: $regular;
+  }
+}

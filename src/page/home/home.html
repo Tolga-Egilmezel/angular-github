@@ -1,0 +1,21 @@
+<!--
+header.html
+=================
+HomePageComp html
+-->
+
+<section class="home">
+  <div class="error" *ngIf="onError != ''">
+    {{ onError }}
+  </div>
+  <aside class="home-repositories">
+    <div class="home-repositories-content">
+      <div class="home-repositories-content-item" *ngFor="let item of result">
+        <a class="home-repositories-content-item__link" [routerLink]="['/main/repositories', param.username, item.name]" routerLinkActive="active">
+          {{item.name}}
+        </a>
+      </div>
+    </div>
+  </aside>
+  <router-outlet name="repo"></router-outlet>
+</section>

@@ -1,0 +1,83 @@
+
+/*
+home.scss
+============
+Home Component css
+*/
+
+@import
+  "../../assets/scss/mixin.scss",
+  "../../assets/scss/color.scss",
+	"../../assets/scss/font.scss"
+;
+
+.error {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: $warning;
+  color: $white;
+  @include font-family;
+  @include font-size(12);
+  font-weight: $light;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: stretch;
+  &-repositories {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    align-items: stretch;
+    max-width: 400px;
+    max-height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    &-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 20px;
+      background-color: $white;
+      &-item {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 8px;
+        padding: 10px;
+        border: 1px solid lighten($black, 20%);
+        border-radius: 2px;
+        min-height: 60px;
+        white-space: normal;
+        &:hover {
+          background-color: $hover;
+          text-decoration: underline;
+        }
+        &__link {
+          color: $black;
+          @include font-family;
+          @include font-size(14);
+          font-weight: $light;
+          text-decoration: none;
+          &.active {
+            color: $active;
+            font-weight: $regular;
+          }
+        }
+      }
+    }
+  }
+}
